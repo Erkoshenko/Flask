@@ -21,7 +21,7 @@ async def start_handler(message: types.Message):
     await message.answer("Привет, я бот")
 
 # FastAPI endpoint /ping
-@app.all("/")
+@app.api_route("/", methods=['GET', 'POST'])
 async def ping():
     return {"message": "I'm alive!"}
 
