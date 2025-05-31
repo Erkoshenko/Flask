@@ -3,12 +3,14 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.enums import ParseMode
 from aiogram.types import Update
 from aiogram.fsm.storage.memory import MemoryStorage
+from aiogram.client.default import DefaultBotProperties
 
 BOT_TOKEN = "8175491637:AAF_-6-4EeUN-hkvhcdhmdQ9RdpmDGrts8s"
 WEBHOOK_PATH = "/webhook"
 WEBHOOK_URL = f"https://flask-1-kjvz.onrender.com{WEBHOOK_PATH}"
 
-bot = Bot(BOT_TOKEN, parse_mode=ParseMode.HTML)
+# Исправленная инициализация бота
+bot = Bot(token=BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher(storage=MemoryStorage())
 app = FastAPI()
 
