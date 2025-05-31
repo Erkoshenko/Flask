@@ -21,9 +21,9 @@ async def start_handler(message: types.Message):
     await message.answer("Привет, я бот")
 
 # FastAPI endpoint /ping
-@app.get("/ping")
+@app.get("/")
 async def ping():
-    return {"message": "pong"}
+    return {"message": "I'm alive!"}
 
 # Обработчик вебхука от Telegram
 @app.post(WEBHOOK_PATH)
